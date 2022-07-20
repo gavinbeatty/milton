@@ -1237,7 +1237,8 @@ picker_hit_history_buttons(ColorPicker* picker, f32 ui_scale, v2i point)
             hits = true;
 
             gui_picker_from_rgb(picker, button->rgba.rgb);
-
+#if 0
+            // XXX Don't rotate out color
             if ( prev ) {
                 prev->next = button->next;
             }
@@ -1245,7 +1246,7 @@ picker_hit_history_buttons(ColorPicker* picker, f32 ui_scale, v2i point)
                 button->next = picker->color_buttons;
             }
             picker->color_buttons = button;
-
+#endif
             update_button_bounds(picker, ui_scale);
             break;
         }
@@ -1561,11 +1562,13 @@ gui_mark_color_used(MiltonGui* gui)
             };
             float epsilon = 0.000001f;
             if ( diff.r < epsilon && diff.g < epsilon && diff.b < epsilon ) {
-                // Move this button to the start and return.
+                // Found color, leave button position as-is (XXX WAS: Move this button to the start and return)
                 changed = true;
+#if 0
                 v4f tmp_color = button->rgba;
                 button->rgba = start->rgba;
                 start->rgba = tmp_color;
+#endif
             }
         }
         button = button->next;

@@ -325,6 +325,7 @@ void    milton_increase_brush_size(Milton* milton);
 void    milton_decrease_brush_size(Milton* milton);
 float   milton_get_brush_alpha(Milton const* milton);
 void    milton_set_brush_alpha(Milton* milton, float alpha);
+void    milton_choose_color_button(Milton* milton, int index_from_1);
 
 // Returns false if the pan_delta moves the pan vector outside of the canvas.
 void milton_resize_and_pan(Milton* milton, v2l pan_delta, v2i new_screen_size);

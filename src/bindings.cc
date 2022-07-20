@@ -72,6 +72,11 @@ set_default_bindings(MiltonBindings* bs)
     binding(bs, Modifier_NONE, 'l', Action_MODE_PRIMITIVE_LINE);
     binding(bs, Modifier_NONE, 'r', Action_MODE_PRIMITIVE_RECTANGLE);
     binding(bs, Modifier_NONE, 'g', Action_MODE_PRIMITIVE_GRID);
+    binding(bs, Modifier_CTRL, '1', Action_CHOOSE_COLOR_BUTTON_1);
+    binding(bs, Modifier_CTRL, '2', Action_CHOOSE_COLOR_BUTTON_2);
+    binding(bs, Modifier_CTRL, '3', Action_CHOOSE_COLOR_BUTTON_3);
+    binding(bs, Modifier_CTRL, '4', Action_CHOOSE_COLOR_BUTTON_4);
+    binding(bs, Modifier_CTRL, '5', Action_CHOOSE_COLOR_BUTTON_5);
     binding(bs, Modifier_NONE, Binding::F1, Action_HELP);
     binding(bs, Modifier_NONE, Binding::TAB, Action_TOGGLE_GUI);
 
@@ -222,6 +227,21 @@ binding_dispatch_action(BindableAction a, MiltonInput* input, Milton* milton, v2
         } break;
         case Action_MODE_PRIMITIVE_GRID: {
             input->mode_to_set = MiltonMode::PRIMITIVE_GRID;
+        } break;
+        case Action_CHOOSE_COLOR_BUTTON_1: {
+            milton_choose_color_button(milton, 1);
+        } break;
+        case Action_CHOOSE_COLOR_BUTTON_2: {
+            milton_choose_color_button(milton, 2);
+        } break;
+        case Action_CHOOSE_COLOR_BUTTON_3: {
+            milton_choose_color_button(milton, 3);
+        } break;
+        case Action_CHOOSE_COLOR_BUTTON_4: {
+            milton_choose_color_button(milton, 4);
+        } break;
+        case Action_CHOOSE_COLOR_BUTTON_5: {
+            milton_choose_color_button(milton, 5);
         } break;
         case Action_SET_BRUSH_ALPHA_10: {
             milton_set_brush_alpha(milton, 0.1f);

@@ -138,6 +138,11 @@ init_localization()
         EN(TXT_Action_MODE_PRIMITIVE_LINE, "Primitive Line");
         EN(TXT_Action_MODE_PRIMITIVE_RECTANGLE, "Primitive Rectangle");
         EN(TXT_Action_MODE_PRIMITIVE_GRID, "Primitive Grid");
+        EN(TXT_Action_CHOOSE_COLOR_BUTTON_1, "Choose Color 1");
+        EN(TXT_Action_CHOOSE_COLOR_BUTTON_2, "Choose Color 2");
+        EN(TXT_Action_CHOOSE_COLOR_BUTTON_3, "Choose Color 3");
+        EN(TXT_Action_CHOOSE_COLOR_BUTTON_4, "Choose Color 4");
+        EN(TXT_Action_CHOOSE_COLOR_BUTTON_5, "Choose Color 5");
         EN(TXT_Action_SET_BRUSH_ALPHA_10, "Set alpha to 10%");
         EN(TXT_Action_SET_BRUSH_ALPHA_20, "Set alpha to 20%");
         EN(TXT_Action_SET_BRUSH_ALPHA_30, "Set alpha to 30%");

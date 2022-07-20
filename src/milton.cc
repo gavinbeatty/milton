@@ -609,6 +609,18 @@ milton_get_brush_alpha(Milton const* milton)
 }
 
 void
+milton_choose_color_button(Milton* milton, int index_from_1)
+{
+    int current_index = 1;
+    ColorButton* b = milton->gui->picker.color_buttons;
+    for (; b!=NULL && index_from_1 != current_index; b=b->next, ++current_index ) {}
+    mlt_assert(b != NULL && index_from_1 == current_index);
+    gui_picker_from_rgb(&milton->gui->picker, b->rgba.rgb); // chosen color
+    gpu_update_picker(milton->renderer, &milton->gui->picker); // update current color circle at top-right of picker triangle
+    milton_update_brushes(milton); // update actual stroke color based on above
+}
+
+void
 settings_init(MiltonSettings* s)
 {
     s->background_color = v3f{1,1,1};
